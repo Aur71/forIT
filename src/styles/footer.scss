@@ -1,0 +1,404 @@
+@import './global.scss';
+
+.footer {
+  width: 100%;
+  height: auto;
+  background: url('../assets/images/texture.jpg') no-repeat center center/cover;
+  display: grid;
+  grid-template-rows: auto auto auto auto auto;
+
+  #row-1 {
+    width: 100%;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgb(10, 10, 10), rgba(20, 20, 20, 0.9));
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(0rem, 1vw, 5rem);
+    padding: clamp(1rem, 1.5vw, 5rem);
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      top: -50px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
+
+    &::before {
+      right: 0;
+      border-width: 0 0 50px 50px;
+      border-color: transparent transparent rgb(10, 10, 10) transparent;
+    }
+
+    &::after {
+      left: 0;
+      border-width: 50px 0 0 50px;
+      border-color: transparent transparent transparent rgb(10, 10, 10);
+    }
+
+    h3 {
+      display: block;
+      color: $text-clr;
+      font-size: clamp(1rem, 1.5vw, 5rem);
+      font-weight: 600;
+      font-family: $font-3;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    form {
+      width: 40%;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: nowrap;
+
+      span {
+        position: absolute;
+
+        &:nth-of-type(1) {
+          width: 10px;
+          height: 10px;
+          border-top: 1px solid $text-clr;
+          border-left: 1px solid $text-clr;
+          top: -5px;
+          left: -5px;
+        }
+
+        &:nth-of-type(2) {
+          width: 10px;
+          height: 10px;
+          border-bottom: 1px solid $text-clr;
+          border-left: 1px solid $text-clr;
+          bottom: -5px;
+          left: -5px;
+        }
+
+        &:nth-of-type(3) {
+          width: 10px;
+          height: 10px;
+          border-top: 1px solid $text-clr;
+          border-right: 1px solid $text-clr;
+          top: -5px;
+          right: -5px;
+        }
+
+        &:nth-of-type(4) {
+          width: 10px;
+          height: 10px;
+          border-bottom: 1px solid $text-clr;
+          border-right: 1px solid $text-clr;
+          bottom: -5px;
+          right: -5px;
+        }
+      }
+
+      input {
+        width: 100%;
+        height: 100%;
+        background-color: rgb(5, 5, 5);
+        border: none;
+        padding: clamp(0.5rem, 0.5vw, 5rem);
+        outline: none;
+        color: $text-clr;
+        font-size: clamp(0.9rem, 0.9vw, 5rem);
+      }
+
+      button {
+        min-width: max-content;
+        border: none;
+        background-color: rgb(27, 27, 27);
+        padding: clamp(0.5rem, 0.5vw, 5rem);
+        cursor: pointer;
+        letter-spacing: 2px;
+        word-spacing: 2px;
+        font-size: clamp(0.9rem, 0.9vw, 5rem);
+        color: $text-clr;
+        font-family: $font-1;
+      }
+    }
+
+    @media only screen and (max-width: 800px) {
+      &::before,
+      &::after {
+        top: -20px;
+      }
+
+      &::before {
+        border-width: 0 0 20px 20px;
+      }
+
+      &::after {
+        border-width: 20px 0 0 20px;
+      }
+
+      & {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      form {
+        width: 100%;
+      }
+    }
+  }
+
+  #row-2 {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: max-content max-content max-content;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    padding: clamp(1rem, 2vw, 10rem) 10px;
+
+    .links-container {
+      width: auto;
+      height: auto;
+      align-self: center;
+
+      h4 {
+        color: grey;
+        text-transform: uppercase;
+        font-family: $font-4;
+        letter-spacing: 1px;
+        word-spacing: 2px;
+        text-align: center;
+        font-size: clamp(1rem, 1.2vw, 5rem);
+        font-weight: 500;
+      }
+
+      ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: clamp(1rem, 1vw, 5rem);
+
+        a {
+          text-transform: uppercase;
+          font-size: clamp(0.9rem, 1vw, 5rem);
+          transition: 300ms;
+
+          &:hover {
+            color: $secondary-clr;
+          }
+        }
+      }
+    }
+
+    #footer-logo {
+      display: grid;
+      place-items: center;
+      text-transform: uppercase;
+      font-family: $font-3;
+      font-weight: 500;
+      font-size: clamp(2rem, 2.5vw, 10rem);
+    }
+
+    @media only screen and (max-width: 500px) {
+      & {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
+  #row-3 {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    justify-content: space-between;
+    align-items: center;
+    gap: clamp(1rem, 1.5vw, 10rem);
+    padding-top: clamp(1rem, 1vw, 10rem);
+    padding-bottom: clamp(1rem, 1vw, 10rem);
+
+    div:nth-of-type(2) {
+      display: flex;
+      align-items: center;
+      gap: clamp(1rem, 2vw, 10rem);
+
+      a {
+        display: flex;
+        font-size: clamp(1rem, 1.2vw, 10rem);
+        padding: clamp(0.6rem, 0.5vw, 1rem);
+        position: relative;
+
+        span {
+          position: absolute;
+          transition: 300ms;
+          background: grey;
+
+          &:nth-of-type(1) {
+            width: 20%;
+            height: 1px;
+            top: 0;
+            left: 0;
+          }
+
+          &:nth-of-type(2) {
+            width: 20%;
+            height: 1px;
+            top: 0;
+            right: 0;
+          }
+
+          &:nth-of-type(3) {
+            width: 20%;
+            height: 1px;
+            bottom: 0;
+            right: 0;
+          }
+
+          &:nth-of-type(4) {
+            width: 20%;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+          }
+
+          &:nth-of-type(5) {
+            height: 20%;
+            width: 1px;
+            top: 0;
+            left: 0;
+          }
+
+          &:nth-of-type(6) {
+            height: 20%;
+            width: 1px;
+            top: 0;
+            right: 0;
+          }
+
+          &:nth-of-type(7) {
+            height: 20%;
+            width: 1px;
+            bottom: 0;
+            right: 0;
+          }
+
+          &:nth-of-type(8) {
+            height: 20%;
+            width: 1px;
+            bottom: 0;
+            left: 0;
+          }
+        }
+
+        &:hover {
+          color: $secondary-clr;
+
+          span {
+            background-color: $secondary-clr;
+
+            &:nth-of-type(1),
+            &:nth-of-type(2),
+            &:nth-of-type(3),
+            &:nth-of-type(4) {
+              width: 100%;
+            }
+
+            &:nth-of-type(5),
+            &:nth-of-type(6),
+            &:nth-of-type(7),
+            &:nth-of-type(8) {
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    div:nth-of-type(1),
+    div:nth-of-type(3) {
+      width: 100%;
+      height: clamp(1px, 0.1vw, 10px);
+      background: $secondary-clr;
+      background: linear-gradient(90deg, $secondary-clr, rgb(29, 29, 29));
+    }
+
+    div:nth-of-type(3) {
+      background: linear-gradient(90deg, rgb(29, 29, 29), $secondary-clr);
+    }
+  }
+
+  #row-4 {
+    width: 100%;
+    padding: clamp(1rem, 1vw, 10rem) 10px;
+    text-align: center;
+
+    h3 {
+      text-transform: uppercase;
+      font-size: clamp(2rem, 3.5vw, 15rem);
+      font-weight: 600;
+      font-family: $font-3;
+    }
+  }
+
+  #row-5 {
+    width: 100%;
+    background-color: black;
+
+    ul {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      li,
+      a {
+        text-transform: uppercase;
+        font-size: clamp(1rem, 1vw, 10rem);
+        transition: 300ms;
+      }
+
+      li > a:hover {
+        color: $secondary-clr;
+      }
+
+      li {
+        &:first-of-type,
+        &:last-of-type {
+          padding: clamp(0.5rem, 0.5vw, 5rem);
+        }
+
+        a {
+          display: inline-block;
+          padding: clamp(0.5rem, 0.5vw, 5rem);
+        }
+
+        &:last-of-type a {
+          padding: 0;
+        }
+
+        &:first-of-type {
+          margin-right: auto;
+          font-family: $font-3;
+          text-transform: none;
+        }
+
+        &:last-of-type {
+          margin-left: auto;
+        }
+
+        @media only screen and (max-width: 550px) {
+          &:first-of-type {
+            margin-right: 0;
+          }
+
+          &:last-of-type {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}

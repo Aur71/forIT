@@ -1,0 +1,21 @@
+@import './global.scss';
+
+.loader {
+  position: fixed;
+  width: 100%;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 9999;
+
+  video {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  &.active {
+    display: block;
+  }
+}
