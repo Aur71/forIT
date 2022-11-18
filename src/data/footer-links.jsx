@@ -27,19 +27,19 @@ const social = [
 const footerLinks1 = [
   {
     id: 3.1,
-    path: '#',
+    path: '/contact',
     name: 'contact',
   },
 
   {
     id: 3.2,
-    path: '#',
+    path: '/support',
     name: 'support',
   },
 
   {
     id: 3.3,
-    path: '#',
+    path: '/warranty',
     name: 'warranty',
   },
 ]
@@ -47,7 +47,7 @@ const footerLinks1 = [
 const footerLinks2 = [
   {
     id: 4.1,
-    path: '#',
+    path: '/about',
     name: 'about',
   },
 
@@ -59,7 +59,7 @@ const footerLinks2 = [
 
   {
     id: 4.3,
-    path: '#',
+    path: '/faqs',
     name: 'faqs',
   },
 ]

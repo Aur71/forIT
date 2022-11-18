@@ -9,7 +9,7 @@ const links = [
 
   {
     id: 2,
-    path: '/',
+    path: '/pc-models',
     name: 'pc models',
     messege: `our systems redy to ship`,
     img: '',
@@ -17,7 +17,7 @@ const links = [
 
   {
     id: 3,
-    path: '/',
+    path: '/peripherals',
     name: 'peripherals',
     messege: `looking for something else?`,
     img: '',

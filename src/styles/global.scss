@@ -9,3 +9,21 @@ $font-1: 'Raleway', sans-serif;
 $font-2: 'Oswald', sans-serif;
 $font-3: 'Cormorant SC', serif;
 $font-4: 'Saira Condensed', sans-serif;
+
+@keyframes noise-anim-1 {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i * (calc(1 / $steps)))} {
+      clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+    }
+  }
+}
+
+@keyframes noise-anim-2 {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i * (calc(1 / $steps)))} {
+      clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+    }
+  }
+}

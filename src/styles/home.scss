@@ -179,24 +179,6 @@
           text-shadow: 1px 0 white;
           animation: noise-anim-2 3s infinite linear alternate-reverse;
         }
-
-        @keyframes noise-anim-1 {
-          $steps: 20;
-          @for $i from 0 through $steps {
-            #{percentage($i * (calc(1 / $steps)))} {
-              clip: rect(random(100) + px, 9999px, random(100) + px, 0);
-            }
-          }
-        }
-
-        @keyframes noise-anim-2 {
-          $steps: 20;
-          @for $i from 0 through $steps {
-            #{percentage($i * (calc(1 / $steps)))} {
-              clip: rect(random(100) + px, 9999px, random(100) + px, 0);
-            }
-          }
-        }
       }
 
       p {

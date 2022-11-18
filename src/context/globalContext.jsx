@@ -4,7 +4,8 @@ import { useContext, useState, useEffect } from 'react'
 const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
-  const [loader, setLoader] = useState(true)
+  const [loader, setLoader] = useState(false)
+  const [filterIndex, setFilterIndex] = useState(1)
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -19,6 +20,8 @@ const AppProvider = ({ children }) => {
       value={{
         loader,
         setLoader,
+        filterIndex,
+        setFilterIndex,
       }}
     >
       {children}

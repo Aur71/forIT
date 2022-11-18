@@ -4,6 +4,8 @@ import Navbar from './layout/navbar/Navbar'
 import Footer from './layout/footer/Footer'
 import Home from './pages/home/Home'
 import Error from './pages/error/Error'
+import PcModels from './pages/pc models/PcModels'
+import Peripherals from './pages/peripherals/Peripherals'
 
 import AOS from 'aos'
 import 'aos/dist/aos.css' // You can also use <link> for styles
@@ -19,6 +21,8 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Home />} />
         <Route path='*' element={<Error />} />
+        <Route path='pc-models' element={<PcModels />} />
+        <Route path='peripherals' element={<Peripherals />} />
       </Routes>
 
       <Footer />

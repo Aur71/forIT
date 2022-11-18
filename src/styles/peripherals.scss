@@ -1,0 +1,343 @@
+@import './global.scss';
+
+$main-clr: aliceblue;
+$border-clr: rgb(168, 168, 168);
+$text-clr: rgb(32, 32, 32);
+
+.peripherals {
+  width: 100%;
+  height: auto;
+  background-color: $main-clr;
+  color: $text-clr;
+  overflow: hidden;
+}
+
+.peripherals-hero {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-top: 8rem;
+  background: rgb(69, 69, 69);
+  background: radial-gradient(
+    circle,
+    rgb(44, 44, 44) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+
+  h1 {
+    color: $secondary-clr;
+    text-transform: uppercase;
+    font-family: $font-3;
+    font-size: clamp(1rem, 15vw, 10rem);
+    font-weight: 400;
+    position: relative;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: attr(data-text);
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    &::before {
+      left: 1px;
+      text-shadow: -1px 0 white;
+      animation: noise-anim-1 2s infinite linear alternate-reverse;
+    }
+
+    &::after {
+      left: 0px;
+      text-shadow: 1px 0 white;
+      animation: noise-anim-2 3s infinite linear alternate-reverse;
+    }
+  }
+}
+
+.peripherals-filter {
+  width: 100%;
+  height: 500px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  div {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      color: $secondary-clr;
+      text-transform: uppercase;
+      font-weight: 300;
+      z-index: 5;
+      font-size: clamp(1rem, 5vw, 5rem);
+    }
+
+    &:nth-of-type(1) {
+      background-image: url('../assets/peripherals/keyboard.jpg');
+    }
+
+    &:nth-of-type(2) {
+      background-image: url('../assets/peripherals/mouse.jpg');
+    }
+
+    &:nth-of-type(3) {
+      background-image: url('../assets/peripherals/headphones.jpg');
+    }
+
+    &:nth-of-type(4) {
+      background-image: url('../assets/peripherals/monitor.jpg');
+    }
+
+    &:nth-of-type(5) {
+      background-image: url('../assets/peripherals/destk.jpg');
+    }
+
+    &:nth-of-type(6) {
+      background-image: url('../assets/peripherals/chairs.jpg');
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    & {
+      height: auto;
+
+      div {
+        aspect-ratio: 1/1;
+      }
+    }
+  }
+}
+
+.peripherals-items {
+  max-width: 1400px;
+  margin: 0 auto;
+  height: auto;
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  gap: clamp(1rem, 1vw, 50px);
+  padding: clamp(2rem, 10vw, 4rem) 0;
+
+  .item {
+    width: 100%;
+    height: auto;
+    transition: 300ms;
+    display: grid;
+    grid-template-rows: auto auto;
+    place-items: center;
+    overflow: hidden;
+
+    .img-container {
+      width: 100%;
+      height: 250px;
+      display: flex;
+      place-items: center;
+
+      &.keyboard {
+        height: 150px;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .info-container {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+
+      h3 {
+        background-color: #3f3b48;
+        color: white;
+        text-transform: uppercase;
+        font-size: 20px;
+        padding: 10px 20px;
+        position: relative;
+        font-family: $font-2;
+        font-weight: 400;
+        transition: 300ms;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        &::before,
+        &::after {
+          position: absolute;
+          content: '';
+          width: 0;
+          height: 0;
+          border-style: solid;
+          z-index: 5;
+        }
+
+        &::before {
+          border-width: 20px 20px 0 0;
+          border-color: $main-clr transparent transparent transparent;
+          top: 0;
+          left: 0;
+        }
+
+        &::after {
+          border-width: 0 0 20px 20px;
+          border-color: transparent transparent $main-clr transparent;
+          right: 0;
+          bottom: 0;
+        }
+      }
+
+      .price-container {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .price {
+          width: 100%;
+          padding: 10px 20px;
+          border: 1px solid black;
+          position: relative;
+
+          p {
+            text-transform: uppercase;
+
+            &:first-of-type {
+              color: grey;
+              font-family: $font-1;
+            }
+
+            &:last-of-type {
+              font-size: 1.7rem;
+              font-family: $font-2;
+            }
+          }
+        }
+
+        .learn-more {
+          width: 100%;
+          background: #3f3b48;
+          border: 1px solid #3f3b48;
+          display: grid;
+          place-items: center;
+          text-transform: uppercase;
+          color: white;
+          font-size: 1.4rem;
+          font-family: $font-2;
+          position: relative;
+          transition: 300ms;
+
+          &::before {
+            position: absolute;
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 20px 20px 0;
+            border-color: transparent $main-clr transparent transparent;
+            top: -1px;
+            right: -1px;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      h3 {
+        background-color: $secondary-clr;
+      }
+
+      .info-container {
+        .learn-more {
+          background-color: $secondary-clr;
+          border-color: $secondary-clr;
+        }
+      }
+    }
+  }
+}
+
+.peripherals-banner {
+  width: 100%;
+  height: 400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .img-1,
+  .img-2 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      text-transform: uppercase;
+      color: $secondary-clr;
+      font-size: clamp(1rem, 7vw, 7rem);
+      position: relative;
+      font-weight: 500;
+
+      @media only screen and (max-width: 550px) {
+        & {
+          font-size: clamp(1rem, 13vw, 5rem);
+        }
+      }
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: attr(data-text);
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      &::before {
+        left: 1px;
+        text-shadow: -1px 0 white;
+        animation: noise-anim-1 2s infinite linear alternate-reverse;
+      }
+
+      &::after {
+        left: 0px;
+        text-shadow: 1px 0 white;
+        animation: noise-anim-2 3s infinite linear alternate-reverse;
+      }
+    }
+  }
+
+  .img-1 {
+    background: url('../assets/images/pc-1.jpg') no-repeat center/cover;
+  }
+
+  .img-2 {
+    background: url('../assets/images/banner-2.jpg') no-repeat center/cover;
+  }
+
+  @media only screen and (max-width: 550px) {
+    & {
+      grid-template-columns: 1fr;
+    }
+  }
+}

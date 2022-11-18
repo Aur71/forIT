@@ -1,19 +1,19 @@
 const extraLinks = [
   {
     id: 1.1,
-    path: '/',
+    path: '/about',
     name: 'about',
   },
 
   {
     id: 1.2,
-    path: '/',
+    path: '/contact',
     name: 'contact',
   },
 
   {
     id: 1.3,
-    path: '/',
+    path: '/support',
     name: 'support',
   },
 ]
