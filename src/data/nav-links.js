@@ -25,7 +25,7 @@ const links = [
 
   {
     id: 4,
-    path: '/',
+    path: '/helpmechose',
     name: 'help me chose',
     messege: `a little lost?`,
     img: '',

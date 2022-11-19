@@ -1,0 +1,312 @@
+@import './global.scss';
+
+$main-clr: aliceblue;
+$border-clr: rgb(168, 168, 168);
+$text-clr: rgb(32, 32, 32);
+
+.help-me-chose {
+  width: 100%;
+  height: auto;
+  background-color: $main-clr;
+  color: $text-clr;
+  overflow: hidden;
+
+  .hero {
+    width: 100%;
+    height: 400px;
+    background: url('../assets/images/hero-help-me-chose.jpg') no-repeat center
+      center/cover;
+    border-bottom: 1px solid black;
+    display: grid;
+    place-items: center;
+
+    @media only screen and (max-width: 750px) {
+      & {
+        height: 300px;
+      }
+    }
+
+    h1 {
+      text-transform: uppercase;
+      color: $secondary-clr;
+      font-family: $font-3;
+      font-size: clamp(1rem, 13vw, 10rem);
+      font-weight: 400;
+      position: relative;
+      transform: translateY(60px);
+
+      @media only screen and (max-width: 800px) {
+        transform: translateY(40px);
+      }
+
+      @media only screen and (max-width: 750px) {
+        transform: translateY(20px);
+      }
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: attr(data-text);
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      &::before {
+        left: 1px;
+        text-shadow: -1px 0 white;
+        animation: noise-anim-1 2s infinite linear alternate-reverse;
+      }
+
+      &::after {
+        left: 0px;
+        text-shadow: 1px 0 white;
+        animation: noise-anim-2 3s infinite linear alternate-reverse;
+      }
+    }
+  }
+
+  //
+  // SECTION 1 BELOW
+  //
+
+  .section-1 {
+    width: 100%;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    gap: clamp(1rem, 3vw, 3rem);
+
+    .text-left {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      p {
+        border-bottom: 1px solid $secondary-clr;
+        color: $secondary-clr;
+        font-size: 1.2rem;
+        width: 100%;
+        margin-right: 9.5rem;
+        text-align: right;
+      }
+
+      h2 {
+        font-size: 3rem;
+        width: 100%;
+        text-align: right;
+      }
+    }
+
+    .text-right {
+      width: 100%;
+
+      p {
+        max-width: 450px;
+        font-size: 1.1rem;
+        padding-top: 45px;
+      }
+    }
+
+    @media only screen and (max-width: 850px) {
+      & {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .text-left {
+        align-items: flex-start;
+
+        p {
+          margin-right: 0;
+          width: max-content;
+          padding-left: clamp(1rem, 3vw, 3rem);
+        }
+
+        h2 {
+          text-align: left;
+          padding-left: clamp(1rem, 3vw, 3rem);
+          padding-right: 10px;
+          font-size: clamp(2rem, 7vw, 3rem);
+        }
+      }
+
+      .text-right {
+        width: 100%;
+
+        p {
+          max-width: 100%;
+          font-size: 1.1rem;
+          padding-top: 0;
+          padding-left: clamp(1rem, 3vw, 3rem);
+          padding-bottom: 50px;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+
+  //
+  // SECTION 2 BELOW
+  //
+
+  .section-2 {
+    width: 100%;
+    height: 600px;
+    margin: clamp(3rem, 5vw, 6rem) 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .img-container {
+      width: 100%;
+      background: url('../assets/images/pc-inside.jpg') no-repeat center
+        center/cover;
+      position: relative;
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        z-index: 9;
+      }
+
+      &::before {
+        border-width: 50px 50px 0 0;
+        border-color: $main-clr transparent transparent transparent;
+        top: -1px;
+        left: -1px;
+      }
+
+      &::after {
+        border-width: 50px 0 0 50px;
+        border-color: transparent transparent transparent $main-clr;
+        bottom: -1px;
+        left: -1px;
+      }
+    }
+
+    .text-container {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      .text {
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        h4 {
+          font-size: 1.2rem;
+          color: $secondary-clr;
+          text-transform: uppercase;
+          border-bottom: 1px solid $secondary-clr;
+          z-index: 8;
+          display: block;
+          transform: translateX(20px);
+        }
+
+        p {
+          font-size: 1.1rem;
+          padding: 0px 20px;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 550px) {
+      & {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+
+      .img-container {
+        height: 400px;
+      }
+
+      .text-container {
+        order: 2;
+        padding: 20px 0px;
+
+        .text {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  //
+  // BANNER BELOW
+  //
+  .banner {
+    width: 100%;
+    height: 400px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .img-1,
+    .img-2 {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      h2 {
+        text-transform: uppercase;
+        color: $secondary-clr;
+        font-size: clamp(1rem, 7vw, 7rem);
+        position: relative;
+        font-weight: 500;
+
+        @media only screen and (max-width: 550px) {
+          & {
+            font-size: clamp(1rem, 13vw, 5rem);
+          }
+        }
+
+        &::before,
+        &::after {
+          position: absolute;
+          content: attr(data-text);
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+        }
+
+        &::before {
+          left: 1px;
+          text-shadow: -1px 0 white;
+          animation: noise-anim-1 2s infinite linear alternate-reverse;
+        }
+
+        &::after {
+          left: 0px;
+          text-shadow: 1px 0 white;
+          animation: noise-anim-2 3s infinite linear alternate-reverse;
+        }
+      }
+    }
+
+    .img-1 {
+      background: url('../assets/images/peripherals.jpg') no-repeat center/cover;
+    }
+
+    .img-2 {
+      background: url('../assets/images/pc-1.jpg') no-repeat center/cover;
+    }
+
+    @media only screen and (max-width: 550px) {
+      & {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

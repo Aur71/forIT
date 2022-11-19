@@ -325,15 +325,15 @@
     &::before {
       border-width: 0 70px 70px 0;
       border-color: transparent $main-clr transparent transparent;
-      top: 0;
-      right: 0;
+      top: -1px;
+      right: -1px;
     }
 
     &::after {
       border-width: 0 0 70px 70px;
       border-color: transparent transparent $main-clr transparent;
-      bottom: 0;
-      right: 0;
+      bottom: -1px;
+      right: -1px;
     }
   }
 

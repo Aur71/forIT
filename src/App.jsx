@@ -6,6 +6,7 @@ import Home from './pages/home/Home'
 import Error from './pages/error/Error'
 import PcModels from './pages/pc models/PcModels'
 import Peripherals from './pages/peripherals/Peripherals'
+import HelpMeChose from './pages/help me chose/HelpMeChose'
 
 import AOS from 'aos'
 import 'aos/dist/aos.css' // You can also use <link> for styles
@@ -23,6 +24,7 @@ function App() {
         <Route path='*' element={<Error />} />
         <Route path='pc-models' element={<PcModels />} />
         <Route path='peripherals' element={<Peripherals />} />
+        <Route path='helpmechose' element={<HelpMeChose />} />
       </Routes>
 
       <Footer />
