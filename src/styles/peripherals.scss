@@ -133,12 +133,14 @@ $text-clr: rgb(32, 32, 32);
   margin: 0 auto;
   height: auto;
   display: grid;
-  grid-template-columns: 300px 300px 300px;
+  grid-template-columns: auto auto auto auto;
+  justify-content: center;
   gap: clamp(1rem, 1vw, 50px);
-  padding: clamp(2rem, 10vw, 4rem) 0;
+  padding: clamp(2rem, 10vw, 4rem) 10px;
+  gap: 50px;
 
   .item {
-    width: 100%;
+    width: 300px;
     height: auto;
     transition: 300ms;
     display: grid;
@@ -146,18 +148,31 @@ $text-clr: rgb(32, 32, 32);
     place-items: center;
     overflow: hidden;
 
+    @media only screen and (max-width: 310px) {
+      & {
+        width: 100%;
+      }
+    }
+
     .img-container {
       width: 100%;
       height: 250px;
       display: flex;
       place-items: center;
+      overflow: hidden;
 
       &.keyboard {
         height: 150px;
       }
 
+      &.headphones {
+        width: 100%;
+        height: 300px;
+      }
+
       img {
         width: 100%;
+        object-fit: cover;
       }
     }
 
@@ -271,6 +286,24 @@ $text-clr: rgb(32, 32, 32);
           border-color: $secondary-clr;
         }
       }
+    }
+  }
+
+  @media only screen and (max-width: 1375px) {
+    & {
+      grid-template-columns: auto auto auto;
+    }
+  }
+
+  @media only screen and (max-width: 1015px) {
+    & {
+      grid-template-columns: auto auto;
+    }
+  }
+
+  @media only screen and (max-width: 660px) {
+    & {
+      grid-template-columns: auto;
     }
   }
 }

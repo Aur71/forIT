@@ -2,35 +2,50 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 // HOOKS
-// import { useGlobalContext } from '../../context/globalContext'
+import { useGlobalContext } from '../../context/globalContext'
+import { useEffect, useState } from 'react'
 
 // DATA & ASSETS
-// import items from '../../data/peripherals/items'
-import keyboard from '../../assets/peripherals/keyboards/keyboard-1.png'
+import items from '../../data/peripherals/items'
 
 const Items = () => {
-  // const { filterIndex } = useGlobalContext()
+  const { filterIndex } = useGlobalContext()
+  const [array, setArray] = useState({ id: 1, data: [], styling: '' })
+
+  useEffect(() => {
+    items.map((item) => {
+      if (item.id === filterIndex) {
+        setArray(item)
+      } else {
+        return []
+      }
+    })
+  }, [filterIndex])
 
   return (
     <section className='peripherals-items'>
-      <article className='item'>
-        <div className='img-container keyboard'>
-          <img src={keyboard} alt='keyboard' />
-        </div>
-
-        <div className='info-container'>
-          <h3>Name</h3>
-
-          <div className='price-container'>
-            <div className='price'>
-              <p>Starting At</p>
-              <p>$59.99</p>
+      {array.data.map((item) => {
+        return (
+          <article key={item.id} className='item'>
+            <div className={`img-container ${array.styling}`}>
+              <img src={item.img} alt={item.name} />
             </div>
 
-            <Link className='learn-more'>learn more</Link>
-          </div>
-        </div>
-      </article>
+            <div className='info-container'>
+              <h3>{item.name}</h3>
+
+              <div className='price-container'>
+                <div className='price'>
+                  <p>Starting At</p>
+                  <p>${item.price}</p>
+                </div>
+
+                <Link className='learn-more'>learn more</Link>
+              </div>
+            </div>
+          </article>
+        )
+      })}
     </section>
   )
 }
