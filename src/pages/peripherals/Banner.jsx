@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 const Banner = () => {
   return (
     <section className='peripherals-banner'>
-      <Link className='img-1' data-aos='fade-right'>
+      <Link data-aos='fade-right' className='img-1' to='/pc-models'>
         <h2 data-text='PC MODELS'>PC MODELS</h2>
       </Link>
 
-      <Link className='img-2' data-aos='fade-left'>
+      <Link data-aos='fade-left' className='img-2' to='/helpmechose'>
         <h2 data-text='HELP ME CHOSE'>HELP ME CHOSE</h2>
       </Link>
     </section>

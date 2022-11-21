@@ -1,8 +1,8 @@
 const links = [
   {
     id: 1,
-    path: '/',
-    name: 'SETUPS',
+    path: '/build-your-own',
+    name: 'build your own',
     messege: `create your own gaming pc`,
     img: '',
   },
