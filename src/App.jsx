@@ -1,7 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Loader from './layout/loader/Loader'
-import Navbar from './layout/navbar/Navbar'
-import Footer from './layout/footer/Footer'
 import Home from './pages/home/Home'
 import Error from './pages/error/Error'
 import PcModels from './pages/pc models/PcModels'
@@ -18,7 +16,6 @@ function App() {
   return (
     <Router>
       <Loader />
-      <Navbar />
 
       <Routes>
         <Route exact path='/' element={<Home />} />
@@ -28,8 +25,6 @@ function App() {
         <Route path='helpmechose' element={<HelpMeChose />} />
         <Route path='build-your-own' element={<BuildYourOwn />} />
       </Routes>
-
-      <Footer />
     </Router>
   )
 }

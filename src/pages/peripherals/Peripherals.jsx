@@ -1,4 +1,6 @@
 import React from 'react'
+import Navbar from '../../layout/navbar/Navbar'
+import Footer from '../../layout/footer/Footer'
 import '../../styles/peripherals.scss'
 import Hero from './Hero'
 import Filter from './Filter'
@@ -7,12 +9,16 @@ import Banner from './Banner'
 
 const Peripherals = () => {
   return (
-    <main className='peripherals'>
-      <Hero />
-      <Filter />
-      <Items />
-      <Banner />
-    </main>
+    <>
+      <Navbar />
+      <main className='peripherals'>
+        <Hero />
+        <Filter />
+        <Items />
+        <Banner />
+      </main>
+      <Footer />
+    </>
   )
 }
 

@@ -1,4 +1,3 @@
-import React from 'react'
 import GlitchImg1 from '../../componenets/GlitchImg1/GlitchImg1'
 import image from '../../assets/images/pc-inside.jpg'
 
