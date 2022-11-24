@@ -19,6 +19,21 @@ const Progress = () => {
             </h2>
           )
         })}
+
+        <div className='stage-bar'>
+          <span
+            className={`${activeStage === 'style' ? 'active' : null}`}
+          ></span>
+          <span
+            className={`${activeStage === 'performance' ? 'active' : null}`}
+          ></span>
+          <span
+            className={`${activeStage === 'upgrades' ? 'active' : null}`}
+          ></span>
+          <span
+            className={`${activeStage === 'checkout' ? 'active' : null}`}
+          ></span>
+        </div>
       </div>
       <ExitBtn />
     </div>
