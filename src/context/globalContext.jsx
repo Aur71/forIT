@@ -6,6 +6,7 @@ const AppContext = React.createContext()
 const AppProvider = ({ children }) => {
   const [loader, setLoader] = useState(false)
   const [filterIndex, setFilterIndex] = useState(1)
+  const [cart, setCart] = useState([])
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -22,6 +23,8 @@ const AppProvider = ({ children }) => {
         setLoader,
         filterIndex,
         setFilterIndex,
+        cart,
+        setCart,
       }}
     >
       {children}

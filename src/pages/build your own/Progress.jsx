@@ -3,9 +3,7 @@ import ExitBtn from './ExitBtn'
 import { stages } from '../../data/stages'
 import { useState } from 'react'
 
-const Progress = () => {
-  const [activeStage, setActiveStage] = useState('style')
-
+const Progress = ({ activeStage }) => {
   return (
     <div className='progress-bar'>
       <div className='progress'>
