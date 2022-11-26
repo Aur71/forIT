@@ -7,7 +7,7 @@ export const cases = [
     name: 'Fractal',
     img: case1,
     info: 'ceva',
-    path: `/src/assets/style/case-1/scene.gltf`,
+    path: '/src/assets/style/case-1/scene.gltf',
   },
 
   {
