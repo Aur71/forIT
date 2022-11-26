@@ -7,7 +7,7 @@ export const cases = [
     name: 'Fractal',
     img: case1,
     info: 'ceva',
-    path: `src/assets/style/case-1/scene.gltf`,
+    path: `/src/assets/style/case-1/scene.gltf`,
   },
 
   {
@@ -15,7 +15,7 @@ export const cases = [
     name: 'Cheap',
     img: case2,
     info: 'ceva',
-    path: `src/assets/style/case-2/scene.gltf`,
+    path: `/src/assets/style/case-2/scene.gltf`,
   },
 
   {
@@ -23,7 +23,7 @@ export const cases = [
     name: 'Fractal',
     img: case1,
     info: 'ceva',
-    path: `src/assets/style/case-1/scene.gltf`,
+    path: `/src/assets/style/case-1/scene.gltf`,
   },
 
   {
@@ -31,7 +31,7 @@ export const cases = [
     name: 'Cheap',
     img: case2,
     info: 'ceva',
-    path: `src/assets/style/case-2/scene.gltf`,
+    path: `/src/assets/style/case-2/scene.gltf`,
   },
 
   {
@@ -39,7 +39,7 @@ export const cases = [
     name: 'Fractal',
     img: case1,
     info: 'ceva',
-    path: `src/assets/style/case-1/scene.gltf`,
+    path: `/src/assets/style/case-1/scene.gltf`,
   },
 
   {
@@ -47,6 +47,6 @@ export const cases = [
     name: 'Cheap',
     img: case2,
     info: 'ceva',
-    path: `src/assets/style/case-2/scene.gltf`,
+    path: `/src/assets/style/case-2/scene.gltf`,
   },
 ]
