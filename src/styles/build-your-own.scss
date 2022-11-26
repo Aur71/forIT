@@ -243,6 +243,11 @@
   grid-template-columns: auto auto;
   padding: 3rem 1rem 1rem 1rem;
   overflow: hidden;
+  display: none;
+
+  &.active {
+    display: grid;
+  }
 
   .showcase,
   .items {
@@ -431,11 +436,24 @@
         display: grid;
         grid-template-rows: auto 1fr auto;
         border: 1px solid grey;
+        transition: 300ms;
         background: linear-gradient(
           135.8deg,
           rgb(26, 26, 29) 27.1%,
           rgb(66, 66, 66) 77.5%
         );
+
+        &.active {
+          border-color: $secondary-clr;
+
+          h3 {
+            border-bottom: 1px solid $secondary-clr;
+          }
+
+          .btn-container {
+            border-top: 1px solid $secondary-clr;
+          }
+        }
 
         h3 {
           display: block;
@@ -444,6 +462,7 @@
           letter-spacing: 1px;
           font-weight: 400;
           border-bottom: 1px solid grey;
+          transition: 300ms;
         }
 
         .img-container {
@@ -465,6 +484,7 @@
           justify-content: center;
           align-items: center;
           border-top: 1px solid grey;
+          transition: 300ms;
 
           button {
             display: block;

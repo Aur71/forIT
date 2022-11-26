@@ -1,7 +1,18 @@
 import React from 'react'
-import case1 from '../../../assets/style/case-1/fractal_meshify.png'
+import { cases } from '../../../data/cases'
 
-const Items = ({ setFullSpec, setCaseShowcase }) => {
+const Items = ({
+  setFullSpec,
+  setActiveCase,
+  activeCase,
+  setShowCase,
+  setActiveStage,
+}) => {
+  const handlePreview = (item) => {
+    setActiveCase(item)
+    setShowCase(true)
+  }
+
   return (
     <div className='items'>
       <div className='row-1'>
@@ -13,38 +24,41 @@ const Items = ({ setFullSpec, setCaseShowcase }) => {
       </div>
 
       <div className='row-2'>
-        <div className='item'>
-          <h3>Title</h3>
-
-          <div className='img-container'>
-            <img src={case1} alt='' />
-          </div>
-
-          <div className='btn-container'>
-            <button
-              className='full-spec-btn'
-              onClick={() => setFullSpec({ id: 1 })}
+        {cases.map((item) => {
+          return (
+            <div
+              className={`item ${activeCase === item ? 'active' : null}`}
+              key={item.id}
+              onClick={() => setActiveCase(item)}
             >
-              FULL SPEC
-            </button>
-            <button
-              className='preview-btn'
-              onClick={() => setCaseShowcase({ id: 1 })}
-            >
-              PREVIEW
-            </button>
-          </div>
-        </div>
+              <h3>{item.name}</h3>
 
-        <div className='item'></div>
-        <div className='item'></div>
-        <div className='item'></div>
-        <div className='item'></div>
-        <div className='item'></div>
-        <div className='item'></div>
+              <div className='img-container'>
+                <img src={item.img} alt={item.name} />
+              </div>
+
+              <div className='btn-container'>
+                <button
+                  className='full-spec-btn'
+                  onClick={() => setFullSpec(true)}
+                >
+                  FULL SPEC
+                </button>
+                <button
+                  className='preview-btn'
+                  onClick={() => handlePreview(item)}
+                >
+                  PREVIEW
+                </button>
+              </div>
+            </div>
+          )
+        })}
       </div>
 
-      <button className='row-3'>Proceed</button>
+      <button className='row-3' onClick={() => setActiveStage('performance')}>
+        Proceed
+      </button>
     </div>
   )
 }

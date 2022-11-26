@@ -2,32 +2,29 @@ import React from 'react'
 import { Canvas } from '@react-three/fiber'
 import { useGLTF, Stage, PresentationControls } from '@react-three/drei'
 
-function Model(props) {
-  const { scene } = useGLTF('src\\assets\\style\\case-1\\scene.gltf')
-  return <primitive object={scene} {...props} />
+function Model({ activeCase }) {
+  const { scene } = useGLTF(activeCase.path)
+  return <primitive object={scene} />
 }
 
-const Showcase = ({ caseShowcase, setCaseShowcase, setFullSpec }) => {
+const Showcase = ({ setFullSpec, showCase, setShowCase, activeCase }) => {
   return (
-    <div className={`showcase ${caseShowcase.id && 'active'}`}>
+    <div className={`showcase  ${showCase && 'active'}`}>
       <div className='model-showcase'>
         <Canvas dpr={[1, 2]}>
           <PresentationControls speed={1.5}>
             <Stage>
-              <Model />
+              <Model activeCase={activeCase} />
             </Stage>
           </PresentationControls>
         </Canvas>
       </div>
 
       <div className='btn-container'>
-        <button
-          className='full-spec-btn'
-          onClick={() => setFullSpec({ id: 1 })}
-        >
+        <button className='full-spec-btn' onClick={() => setFullSpec(true)}>
           FULL SPEC
         </button>
-        <button className='change-case-btn' onClick={() => setCaseShowcase({})}>
+        <button className='change-case-btn' onClick={() => setShowCase(false)}>
           CHANGE CASE
         </button>
       </div>

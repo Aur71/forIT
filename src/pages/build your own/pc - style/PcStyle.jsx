@@ -1,16 +1,34 @@
 import React from 'react'
 import Showcase from './Showcase'
 import Items from './Items'
+import { cases } from '../../../data/cases'
 
-const PcStyle = ({ setFullSpec, caseShowcase, setCaseShowcase }) => {
+const PcStyle = ({
+  setFullSpec,
+  setActiveCase,
+  activeCase,
+  setShowCase,
+  showCase,
+  setActiveStage,
+  activeStage,
+}) => {
   return (
-    <section className='pc-style'>
+    <section
+      className={`${activeStage === 'style' ? 'pc-style active' : 'pc-style'}`}
+    >
       <Showcase
         setFullSpec={setFullSpec}
-        caseShowcase={caseShowcase}
-        setCaseShowcase={setCaseShowcase}
+        showCase={showCase}
+        setShowCase={setShowCase}
+        activeCase={activeCase}
       />
-      <Items setFullSpec={setFullSpec} setCaseShowcase={setCaseShowcase} />
+      <Items
+        setFullSpec={setFullSpec}
+        activeCase={activeCase}
+        setActiveCase={setActiveCase}
+        setShowCase={setShowCase}
+        setActiveStage={setActiveStage}
+      />
     </section>
   )
 }
