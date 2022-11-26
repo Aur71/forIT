@@ -9,6 +9,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 
 //
@@ -241,19 +242,24 @@
   display: grid;
   grid-template-columns: auto auto;
   padding: 3rem 1rem 1rem 1rem;
+  overflow: hidden;
 
   .showcase,
   .items {
     width: 100%;
+    overflow: hidden;
   }
 
   .showcase {
     width: 700px;
-    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 
     .model-showcase {
-      width: 100%;
-      height: 100%;
+      width: 90%;
+      height: 90%;
     }
 
     .btn-container {
@@ -262,11 +268,19 @@
   }
 
   @media only screen and (max-width: 1280px) {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 600px auto;
 
     .showcase {
       width: 100%;
     }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    grid-template-columns: 550px auto;
+  }
+
+  @media only screen and (max-width: 1150px) {
+    grid-template-columns: 490px auto;
   }
 
   @media only screen and (max-width: 1050px) {
@@ -291,9 +305,7 @@
         position: absolute;
         top: 70px;
         width: 100%;
-        min-height: 100px;
-        height: auto;
-        background-color: blue;
+        min-height: calc(100vh - 200px);
       }
 
       .btn-container {
