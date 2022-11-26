@@ -15,7 +15,7 @@ const MenuItems = () => {
                 {messege}
                 <BsArrowRight />
               </span>
-              <Link data-text={name} path={path}>
+              <Link data-text={name} to={path}>
                 {name}
               </Link>
             </li>

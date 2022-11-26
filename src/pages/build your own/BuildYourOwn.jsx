@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Progress from './Progress'
 import FullSpec from './FullSpec'
 import PcStyle from './pc - style/PcStyle'
+import Performance from './pc - performance/Performance'
 import { cases } from '../../data/cases'
 
 const BuildYourOwn = () => {
@@ -28,6 +29,8 @@ const BuildYourOwn = () => {
         activeStage={activeStage}
         setActiveStage={setActiveStage}
       />
+
+      <Performance activeStage={activeStage} />
     </main>
   )
 }
