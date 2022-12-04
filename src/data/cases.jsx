@@ -1,7 +1,7 @@
 import case1 from '../assets/style/case-1/fractal_meshify.png'
 import case2 from '../assets/style/case-2/case2.png'
 
-const cases = [
+export const cases = [
   {
     id: 1,
     name: 'Fractal',
@@ -51,6 +51,3 @@ const cases = [
   },
 ]
 
-JSON.stringify(cases)
-
-export { cases }
