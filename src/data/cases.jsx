@@ -1,7 +1,7 @@
 import case1 from '../assets/style/case-1/fractal_meshify.png'
 import case2 from '../assets/style/case-2/case2.png'
 
-export const cases = [
+const cases = [
   {
     id: 1,
     name: 'Fractal',
@@ -50,3 +50,7 @@ export const cases = [
     path: `/src/assets/style/case-2/scene.gltf`,
   },
 ]
+
+JSON.stringify(cases)
+
+export { cases }
